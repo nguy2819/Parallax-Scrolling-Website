@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax Scrolling Website</title>
+    <link rel="stylesheet" href="css/main.css"/>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">Latter-day Saint pioneers</a>
+        <ul>
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Work</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </header>
+
+    <section>
+        <img src="images/moon.png" id="moon">
+        <img src="images/stars.png" id="stars">
+        <img src="images/mountains_front.png" id="mountains_front">
+        <h2 id="text">Latter-day Saint pioneers</h2>
+        <a href="https://www.churchofjesuschrist.org/media/video/2019-03-1020-lessons-from-the-latter-day-saint-pioneer-trek?lang=eng" id="btn" target="_blank">Explore</a>
+        <img src="images/mountains_behind.png" id="mountains_behind">
+    </section>
+
+    <div class="sec" id="sec">
+        <h2>Pioneers<br>
+            1847–Today</h2>
+        <p>On April 16, 1847, a group of 148 Latter-day Saints in 72 wagons left Nebraska and began the 1,031-mile journey to the Salt Lake Valley. They arrived in the Salt Lake Valley between the 21st and 24th of July 1847.
+            <br>
+            <br>
+            In the years that followed, tens of thousands of Latter-day Saints from around the world would leave their homes and follow the same route to the Salt Lake Valley.
+            <br>
+            <br>
+            Today, Latter-day Saints everywhere continue this pioneering legacy in their own countries as the gospel of Jesus Christ spreads throughout the world.
+            <br>
+            <br>
+            The resources on this page provide a glimpse into the lives of these Mormon pioneers of both yesterday and today.
+            <br>
+            <br>
+            <a href="https://history.churchofjesuschrist.org/subsection/-mormon-pioneers-1847-today?lang=eng" target="_blank">Source</a>
+        </p>
+        <div class="videos">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/z_92mKlQOlk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/O6y3sYevYk4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <script>
+        let stars = document.getElementById('stars')
+        let moon = document.getElementById('moon')
+        let mountains_front = document.getElementById('mountains_front')
+        let mountains_behind = document.getElementById('mountains_behind')
+        let text = document.getElementById('text')
+        let btn = document.getElementById('btn')
+        let header = document.querySelector('header')
+
+        window.addEventListener('scroll', function(){
+            let value = window.scrollY;
+            stars.style.left = value * 0.25 + 'px';
+            moon.style.top = value * 1.05 + 'px';
+            mountains_front.style.top = value * 0 + 'px';
+            mountains_behind.style.top = value * 0.5 + 'px';
+            text.style.marginRight = value * 4 + 'px';
+            text.style.marginTop = value * 1.5 + 'px';
+            btn.style.marginTop = value * 1.5 + 'px';
+            header.style.top = value * 0.5 + 'px';
+        })
+    </script>
+</body>
+</html>
